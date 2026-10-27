@@ -13,8 +13,15 @@ PROJECT_SUBTITLE = "AI-Based Devanagari Handwritten Character Recognition"
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
+
 # Gemini Vision API Configuration for untrained/arbitrary handwritten recognition
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 GEMINI_DEFAULT_MODEL = "gemini-2.5-flash"
 
 IMAGE_SIZE = 224
