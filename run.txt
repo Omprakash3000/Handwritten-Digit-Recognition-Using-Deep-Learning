@@ -1,0 +1,4 @@
+python evaluate.py
+
+cd "c:\Users\ompra\Desktop\hindi-handwritten"
+streamlit run app/streamlit_app.py
